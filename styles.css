@@ -1,0 +1,35 @@
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#handsontable-container {
+  display: table;
+  margin: 3rem auto 3rem auto;
+}
+
+#load-container {
+  text-align: center;
+}
+
+#save-container {
+  text-align: center;
+  display: none;
+}
+
+#console-container {
+  color: red;
+  display: table;
+  margin: 3rem auto 3rem auto;
+}

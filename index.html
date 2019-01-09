@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+  <title>CSV GitHub Editor</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <div id="load-container">
+    GitHub raw URL:
+    <input type="text" id="url-input" size="85" zx/>
+    <button type="submit" id="load-button">Load</button>
+  </div>
+
+  <div id="handsontable-container"></div>
+
+  <div id="save-container">
+    Personal GitHub token:
+    <input type="text" id="token-input" size="45" />
+    <button type="submit" id="save-button">Save</button>
+  </div>
+
+  <div id="console-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/handsontable@6.2.2/dist/handsontable.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@4.6.2/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-base64@2.5.0/base64.min.js"></script>
+  <script src="app.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable@6.2.2/dist/handsontable.full.min.css">
+</body>
