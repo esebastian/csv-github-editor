@@ -48,6 +48,10 @@ input.onkeyup = function (event) {
 load.onclick = function () {
   var url = input.value
 
+  if (url === '') {
+    return
+  }
+
   // reset table container and table
   tableContainer.innerHTML = ''
   tableContainer.className = ''
