@@ -72,7 +72,8 @@ load.onclick = function () {
         data: results.data,
         rowHeaders: true,
         colHeaders: results.meta.fields,
-        columnSorting: true
+        columnSorting: true,
+        contextMenu: true
       })
 
       saveContainer.style.display = 'block'
@@ -90,8 +91,7 @@ save.onclick = function () {
   var repo = getRepo(input.value)
   var path = getPath(input.value)
 
-  var apiUrl =
-    'https://api.github.com/repos/' + owner + '/' + repo + '/contents/' + path
+  var apiUrl = 'https://api.github.com/repos/' + owner + '/' + repo + '/contents/' + path
 
   var data = exportAsString(handsontableTable)
   var content = Base64.encode(data)
@@ -99,11 +99,7 @@ save.onclick = function () {
   consoleContainer.innerText = 'Saving...'
 
   // update the file in GitHub
-  fetch(apiUrl, {
-    headers: {
-      Authorization: 'token ' + token
-    }
-  })
+  fetch(apiUrl, {headers: {Authorization: 'token ' + token}})
     .then(function (response) {
       if (!response.ok) {
         throw new Error('Error: The file couldn\'t be saved')
@@ -121,9 +117,7 @@ save.onclick = function () {
 
       fetch(apiUrl, {
         method: 'PUT',
-        headers: {
-          Authorization: 'token ' + token
-        },
+        headers: {Authorization: 'token ' + token},
         body: JSON.stringify(payload)
       })
         .then(function (response) {
