@@ -19,7 +19,7 @@ var exportAsString = function (table) {
     return array.join(',')
   }
 
-  result = data.map(joinWithComma).join('\n') + '\n'
+  var result = data.map(joinWithComma).join('\n') + '\n'
 
   return result
 }
